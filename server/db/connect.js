@@ -4,7 +4,7 @@ const mongoose =require('mongoose');
 
 const ConnectToDataBase=()=>{
   // console.log('Start Connections')
-   mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true, useUnifiedTopology: true ,useFindAndModify: false});
+   mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true, useUnifiedTopology: true});
     
   //  console.log('Loading Connections');
    mongoose.connection
@@ -12,5 +12,4 @@ const ConnectToDataBase=()=>{
     .on('error',(error)=>console.log(error,123));
 }
 
-
-exports.Connect=ConnectToDataBase;
+export {ConnectToDataBase};
